@@ -1,0 +1,312 @@
+header{
+    width: 1863px;
+    height: 164px;
+    margin:-8px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    display:flex;
+}
+
+#header-name{
+    width: 974px;
+    height: 164px;
+    background: #C149FA;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    /* align-content: center; */
+}
+ #header-name > span{
+    position: absolute;
+    width: 413px;
+    height: 84px;
+    left: 214px;
+    top: 40px;
+    font-family: Roboto;
+    margin-left: 100px;
+    margin-top: 10px;
+    font-size: 72px;
+    color: #FFFFFF;
+    top: 30px;
+ }
+
+#header-main{
+    width: 220px;
+    height: 164px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+    padding-top:50px;
+    text-decoration:none;
+}
+
+#header-catalog{
+    width: 220px;
+    height: 164px;
+    background: #C149FA;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #FFFFFF;
+    padding-top:50px;
+    text-decoration:none;
+}
+
+#header-about{
+    width: 220px;
+    height: 164px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+    padding-top:50px;
+    text-decoration:none;
+}
+
+#header-basket{
+    width: 230px;
+    height: 164px;
+    background: #C149FA;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+   
+}
+
+#basket{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#arrow{
+    margin-bottom: 30px;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1920px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+      display: none;
+  }
+
+  .mySlides > img{
+    width:101%; 
+    height: 400px; 
+    object-fit:cover;
+    margin-left: -10px; 
+    margin-top: 9px;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 15px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    border-radius: 100%;
+    background-color: white;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color:#C149FA;
+    color: white;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
+.content-block{
+    display:flex;
+    width: 1863px;
+    height: 450px;
+    margin: -8px;
+} 
+
+.with-image{
+    width: 50%;
+    height: 442px;
+}
+
+
+
+
+.first .with-image{
+    background: url(../images/index_content1.jpg);
+    background-size: cover;
+}
+
+.second .with-image{
+    background: url(../images/index_content2.jpg);
+    background-size: cover;
+}
+.third .with-image{
+    background: url(../images/index_content3.jpg);
+    background-size: cover;
+}
+
+.overlay{
+    transition: 0.6s;
+    width: 100%;
+    height: 100%;
+    background: #c249fa00;
+}
+
+.overlay:hover{
+    transition: 0.6s;
+    background: #c249fa85;
+}
+.with-image> p{
+    position: absolute;
+    margin-top: -350px;
+    margin-left: 100px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 84px;
+
+    color: #FFFFFF;
+
+    text-shadow: 1px 0 1px #000, 
+    0   1px 1px #000, 
+    -1px 0 1px #000, 
+    0 -1px 1px #000;
+}
+
+.with-text{
+    width: 50%;
+    height: 450px;
+}
+
+.with-text p{
+    margin-top: 100px;
+    margin-left: 100px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+
+    color: #000000;
+}
+
+.second .with-text{
+    background: #C149FA;
+}
+
+.second .with-text p{
+    color: white;
+}
+
+#go{
+    margin-left: -8px;
+    width: 1863px;
+    height: 200px;
+    background: url(../images/index_content4.png);
+    background-size: cover;
+    text-align: center;
+    padding-top: 150px;
+}
+
+#go a{
+padding-left: 785px;
+padding-top: 150px;
+padding-right: 785px;
+padding-bottom: 110px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 72px;
+
+color: #FFFFFF;
+
+text-shadow: 1px 0 1px #000, 
+    0   1px 1px #000, 
+    -1px 0 1px #000, 
+    0 -1px 1px #000;
+    transition: 0.6s;
+    text-decoration:none;
+}
+
+#go a:hover{
+    transition: 0.6s;
+    background: #c249fa79;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Orchid World</title>
+        <link rel="stylesheet" href="../static/styles/index.css">
+    </head>
+    <body>
+        <header>
+            <div id = "header-name">
+                <span>Orchid World</span>
+            </div>
+            <a href="#" id = "header-main">Главная</a>
+            <a href="#" id = "header-catalog">Каталог</a>
+            <a href="#" id = "header-about">О нас</a>
+            <a id="header-basket">
+                <img src="../static/images/basket.png" width="110px" height="100px" alt="#" id="basket">
+                <img src="../static/images/arrow.png" width="50px" height="30px" alt="#" id="arrow">
+            </a>
+        </header>
+
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+              <img src="../static/images/slideshow1.jpg">
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext"></div>
+              <img src="../static/images/slideshow2.jpg">
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext"></div>
+              <img src="../static/images/slideshow3.jpg">
+            </div>
+          
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          <!-- The dots/circles -->
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+        </div>
+        <br>
+
+
+    <div class="content-block first">
+          <div class = "with-image">
+            <div class="overlay"></div>
+            <p>Орхидеи на <br> любой вкус!</p>
+          </div>
+          <div class = "with-text">
+            <p>В нашем магазине вы найдете <br> орхидеи на все случаи жизни!</p>
+          </div>
+    </div>
+    <div class="content-block second">
+        <div class = "with-text">
+            <p>Мы тщательно следим<br>за качеством и свежестью<br> наших цветов</p>
+        </div>
+        <div class = "with-image">
+            <div class="overlay"></div>
+            <p>Только качественные <br> цветы!</p>
+        </div>
+    </div>
+    <div class="content-block third">
+        <div class = "with-image">
+            <div class="overlay"></div>
+            <p>Доступные цены!</p>
+        </div>
+        <div class = "with-text">
+            <p>Самые низкие<br> цены только для вас!</p>
+        </div>
+    </div>
+   <div id = "go">
+        <a href="#">Поехали!</a>
+   </div>
+          <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            // Thumbnail image controls
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+            }
+          </script>
+    </body>
+</html>
