@@ -10,7 +10,7 @@ header{
 
 #header-name{
     width: 974px;
-    height: 164px;
+    height: 100%;
     background: #C149FA;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -32,7 +32,7 @@ header{
 
 #header-main{
     width: 220px;
-    height: 164px;
+    height: 100%;
     background: #FFFFFF;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -47,9 +47,14 @@ header{
     text-decoration:none;
 }
 
+#header-main:hover{
+    background: #C149FA;
+    color: #FFFFFF;
+}
+
 #header-catalog{
     width: 220px;
-    height: 164px;
+    height: 100%;
     background: #C149FA;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -64,9 +69,14 @@ header{
     text-decoration:none;
 }
 
+#header-catalog:hover{
+    background: #FFFFFF;
+    color: #000000;
+}
+
 #header-about{
     width: 220px;
-    height: 164px;
+    height: 100%;
     background: #FFFFFF;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -81,13 +91,22 @@ header{
     text-decoration:none;
 }
 
+#header-about:hover{
+    background: #C149FA;
+    color: #FFFFFF;
+}
+
 #header-basket{
-    width: 230px;
-    height: 164px;
+    width: 245px;
+    height: 100%;
     background: #C149FA;
     border: 1px solid #000000;
     box-sizing: border-box;
-   
+}
+
+#header-basket:hover{
+    background: #FFFFFF;
+    color: #000000;
 }
 
 #basket{
@@ -117,7 +136,7 @@ header{
     height: 400px; 
     object-fit:cover;
     margin-left: -10px; 
-    margin-top: 9px;
+    margin-top: 8px;
   }
   
   /* Next & previous buttons */

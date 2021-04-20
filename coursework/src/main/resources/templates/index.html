@@ -13,7 +13,7 @@
             <a href="#" id = "header-main">Главная</a>
             <a href="#" id = "header-catalog">Каталог</a>
             <a href="#" id = "header-about">О нас</a>
-            <a id="header-basket">
+            <a id="header-basket" onmouseover="change()" onmouseout="notChange()">
                 <img src="../static/images/basket.png" width="110px" height="100px" alt="#" id="basket">
                 <img src="../static/images/arrow.png" width="50px" height="30px" alt="#" id="arrow">
             </a>
@@ -107,6 +107,19 @@
                 }
                 slides[slideIndex-1].style.display = "block";
                 dots[slideIndex-1].className += " active";
+            }
+
+            function change(){
+                let arrow = document.getElementById('arrow');
+                let basket = document.getElementById('basket');
+                arrow.src = '../static/images/arrow_black.png';
+                basket.src = '../static/images/basket_black.png';
+            }
+            function notChange(){
+                let arrow = document.getElementById('arrow');
+                let basket = document.getElementById('basket');
+                arrow.src = '../static/images/arrow.png';
+                basket.src = '../static/images/basket.png';
             }
           </script>
     </body>
