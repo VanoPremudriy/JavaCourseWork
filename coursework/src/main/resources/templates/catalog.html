@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th = "http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <title>Каталог</title>
-        <link rel="stylesheet" href="../static/styles/catalog.css">
+        <link rel="stylesheet" th:href="@{styles/catalog.css}">
     </head>
     <body>
         <header>
@@ -14,32 +14,35 @@
             <a href="#" id = "header-catalog">Каталог</a>
             <a href="#" id = "header-about">О нас</a>
             <a id="header-basket" onmouseover="change()" onmouseout="notChange()">
-                <img src="../static/images/basket.png" width="110px" height="100px" alt="#" id="basket">
-                <img src="../static/images/arrow.png" width="50px" height="30px" alt="#" id="arrow">
+                <img src="images/basket.png" width="110px" height="100px" alt="#" id="basket">
+                <img src="images/arrow.png" width="50px" height="30px" alt="#" id="arrow">
             </a>
         </header>
-        <div class = "box"><div class = "category">
+        <div class = "box">
+            <div class = "category">
             <a id = "choice">Категория: </a>
-            <a>Орхидея Ванда</a>
-            <a>Орхидея Дендробиум</a>
-            <a >Орхидея Камбрия</a>
-            <a>Орхидея Каттлея</a>
-            <a>Орхидея Пафиопедилум</a>
-            <a>Орхидея фаленопсис</a>
-            <a>Орхидея Цикнохес</a>
-            <a>Орхидея Цимбидиум</a>
+            <a href="/catalog?id=1">Орхидея Ванда</a>
+            <a href="/catalog?id=2">Орхидея Дендробиум</a>
+            <a href="/catalog?id=3">Орхидея Камбрия</a>
+            <a href="/catalog?id=4">Орхидея Каттлея</a>
+            <a href="/catalog?id=5">Орхидея Пафиопедилум</a>
+            <a href="/catalog?id=6">Орхидея Фаленопсис</a>
+            <a href="/catalog?id=7">Орхидея Цикнохес</a>
+            <a href="/catalog?id=8">Орхидея Цимбидиум</a>
         </div>
         <div class = "main-block">
-            <p>Название</p>
+            <p th:text="${type.get().name}"></p>
             <div id = "line"></div>
-
-            <div class = "product">
-                <div class = "content">
-                    <span id = "content-name">Название</span>
-                    <div id = "content-line"></div>
-                    <div id = "content-buy">
-                        <span id = "content-price">xxxx руб.</span>
-                        <span id = "in-basket">В корзину</span>
+            <div class = "main-block-content">
+                <div class = "product" th:each="product: ${products}" th:style="'background-image:url(' + @{'/images/' + ${product.image}} + ');'">
+                  <!--  <img th:src="@{'/images/' + ${product.image}}">-->
+                    <div class = "content">
+                        <span id = "content-name" th:text="${product.name}"></span>
+                        <div id = "content-line"></div>
+                        <div id = "content-buy">
+                            <span id = "content-price" th:text = "${product.price} + ' руб.'"></span>
+                            <span id = "in-basket">В корзину</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,14 +54,14 @@
         function change(){
         let arrow = document.getElementById('arrow');
         let basket = document.getElementById('basket');
-        arrow.src = '../static/images/arrow_black.png';
-        basket.src = '../static/images/basket_black.png';
+        arrow.src = 'images/arrow_black.png';
+        basket.src = 'images/basket_black.png';
         }
         function notChange(){
             let arrow = document.getElementById('arrow');
             let basket = document.getElementById('basket');
-            arrow.src = '../static/images/arrow.png';
-            basket.src = '../static/images/basket.png';
+            arrow.src = 'images/arrow.png';
+            basket.src = 'images/basket.png';
         }
     </script>
 </html>

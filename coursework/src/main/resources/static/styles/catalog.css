@@ -131,6 +131,7 @@ header{
     top: 50px;
 }
 
+
 #choice{
     display: block;
     box-sizing: border-box;
@@ -160,6 +161,8 @@ header{
     border: solid 1px black;
     font-size: 36px;
     padding-left: 20px;
+    text-decoration:none;
+    color: #000000;
 }
 .category > *:hover{
     background-color: #C149FA;
@@ -171,7 +174,11 @@ header{
     margin-top: 10px;
     width: 1300px;
 }
-
+.main-block-content{
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-wrap: wrap;
+}
 .main-block p{
     width: 428px;
     height: 84px;
@@ -193,11 +200,10 @@ header{
 
 .product{
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 150px;
     width: 400px;
     height: 550px;
     border: solid;
-    background: url(../images/dendrobium/1.jpg);
     background-size: cover;
     border-radius: 20px;
 }
@@ -215,8 +221,8 @@ header{
 .content #content-name{
     display: block;
     box-sizing: border-box;
+    text-align: center;
     margin-top: 10px;
-    margin-left: 30%;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
