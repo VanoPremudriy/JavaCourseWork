@@ -1,0 +1,191 @@
+header{
+    width: 1863px;
+    height: 164px;
+    margin:-8px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    display:flex;
+}
+
+#header-name{
+    width: 974px;
+    height: 100%;
+    background: #C149FA;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    /* align-content: center; */
+}
+ #header-name > span{
+    position: absolute;
+    width: 413px;
+    height: 84px;
+    left: 214px;
+    top: 40px;
+    font-family: Roboto;
+    margin-left: 100px;
+    margin-top: 10px;
+    font-size: 72px;
+    color: #FFFFFF;
+    top: 30px;
+ }
+
+#header-main{
+    width: 220px;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+    padding-top:50px;
+    text-decoration:none;
+}
+
+#header-main:hover{
+    background: #C149FA;
+    color: #FFFFFF;
+}
+
+#header-catalog{
+    width: 220px;
+    height: 100%;
+    background: #C149FA;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #FFFFFF;
+    padding-top:50px;
+    text-decoration:none;
+}
+
+#header-catalog:hover{
+    background: #FFFFFF;
+    color: #000000;
+}
+
+#header-about{
+    width: 220px;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+    padding-top:50px;
+    text-decoration:none;
+}
+
+#header-about:hover{
+    background: #C149FA;
+    color: #FFFFFF;
+}
+
+#header-basket{
+    width: 245px;
+    height: 100%;
+    background: #C149FA;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+#header-basket:hover{
+    background: #FFFFFF;
+    color: #000000;
+}
+
+#basket{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#arrow{
+    margin-bottom: 30px;
+}
+
+.content{
+    display: flex;
+}
+
+.for-info{
+    height: 800px;
+    width: 800px;
+    margin-top: 5%;
+    margin-left: 10%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.for-contact{
+    height: 800px;
+    width: 800px;
+    margin-top:5%;
+    margin-left: 4%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+}
+
+#why{
+    font-size: 72px;
+    color: #000000;
+    display: block;
+}
+
+.for-info > *:not(:first-child){
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: 48px;
+    color: #000000;
+    display: block;
+}
+
+#contact{
+    font-size: 72px;
+    color: #000000;
+    display: block;
+}
+
+.for-contact > span:not(:first-child){
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: 48px;
+    color: #000000;
+    display: block;
+}
+
+#whatsapp{
+    margin-left: 3%;
+}
+
+#viber{
+    margin-left: 2%;
+}
+
+#telegram{
+    margin-left: 2%;
+}
+
+#instagram{
+    margin-left: 3%;
+}
+
+#vk{
+    margin-left: 2%;
+}

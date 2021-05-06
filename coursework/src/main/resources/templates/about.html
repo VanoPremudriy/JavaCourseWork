@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns:th = "http://www.thymeleaf.org">
+<html lang="ru">
     <head>
         <meta charset="UTF-8">
         <title>Orchid World</title>
-        <link rel="stylesheet" href="styles/product.css">
+        <link rel="stylesheet" href="styles/about.css">
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     </head>
     <body>
@@ -21,15 +21,25 @@
         </header>
 
         <div class="content">
-            <div class="for-image">
-                <img th:src="@{'images/'} + ${product.get().image}" width="100%" height="auto">
-            </div>
             <div class="for-info">
-                <span id="name" th:text="${product.get().name}"></span>
-                <span id="category" th:text="'Категория: ' + ${type.get().name}"></span>
-                <span id="number">Количество: 1шт.</span>
-                <span id = "price" th:text="${product.get().price} +' руб.'"></span>
-                <span id = "in-basket">В корзину</span>
+                <span id="why">Почему именно мы?</span>
+                <span id="one">&#10102 Качественные цветы</span>
+                <span id="two">&#10103 Доступные цены</span>
+                <span id="three">&#10104 Наилучший уход</span>
+                <span id="four">&#10105 Грамотные специалисты</span>
+            </div>
+            <div class="for-contact">
+               <span id="contact">Контакты</span>
+               <span id="address">Москва, <br>ул. Пушкина, д. Колотушкина</span>
+               <span id="mail">info@orchid-world.ru</span>
+               <span id="when">Ежедневно 9:00-23:00</span>
+               <span id="telephone">+7 (800) 555-35-35</span>
+               <a href="#" id="whatsapp"><img src="images/whatsapp.png" alt="" width="100px" height="100px"></a>
+               <a href="#" id="viber"><img src="images/viber.png" alt="" width="90px" height="90px"></a>
+               <a href="#" id="telegram"><img src="images/telegram.png" alt="" width="90px" height="90px"></a>
+               <span id="in-soc">Мы в соц. сетях</span>
+               <a href="#" id="instagram"><img src="images/instagram.png" alt="" width="90px" height="90px"></a>
+               <a href="#" id="vk"><img src="images/vk.png" alt="" width="90px" height="90px"></a>
             </div>
         </div>
         <script>
