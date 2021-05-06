@@ -14,6 +14,7 @@ header{
     background: #C149FA;
     border: 1px solid #000000;
     box-sizing: border-box;
+    /* align-content: center; */
 }
  #header-name > span{
     position: absolute;
@@ -45,6 +46,7 @@ header{
     padding-top:50px;
     text-decoration:none;
 }
+
 #header-main:hover{
     background: #C149FA;
     color: #FFFFFF;
@@ -99,7 +101,7 @@ header{
     height: 100%;
     background: #C149FA;
     border: 1px solid #000000;
-    box-sizing: border-box;  
+    box-sizing: border-box;
 }
 
 #header-basket:hover{
@@ -114,176 +116,88 @@ header{
 
 #arrow{
     margin-bottom: 30px;
-    
 }
 
-.box{
-    display:flex;
-}
-
-.category{
-    width: 472px;
-    height: 465px;
-    border: solid;
-    margin-top: 50px;
-    margin-left: 20px;
-    position: sticky;
-    top: 50px;
-}
-
-
-#choice{
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    height: 73px;
-    background-color: #C149FA;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 42px;
-    color: #FFFFFF;
-    border: solid 1px black;
-    padding-left: 20px;
-    padding-top: 10px;
-
-}
-
-.category > *{
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    height: 49px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    border: solid 1px black;
-    font-size: 36px;
-    padding-left: 20px;
-    text-decoration:none;
-    color: #000000;
-}
-.category > *:hover{
-    background-color: #C149FA;
-    color: #FFFFFF;
-}
-
-.main-block{
-    margin-left: 50px;
-    margin-top: 10px;
-    width: 1300px;
-}
-.main-block-content{
+.content{
     display: flex;
-    /*justify-content: space-between;*/
-    flex-wrap: wrap;
 }
-.main-block p{
-    width: 428px;
-    height: 84px;
-    padding-left: 100px;
+
+.for-image{
+
+    height: 800px;
+    width: 600px;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.for-info{
+
+    height: 800px;
+    width: 600px;
+    margin-top:5%;
+    margin-left: 4%;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
+}
+
+#name{
+    display: block;
+    width: 800px;
+    height: 84px;
     font-size: 72px;
     line-height: 84px;
     color: #000000;
 }
 
-#line{
-    margin-top: -60px;
-    margin-left: 5%;
-    border: solid #403b42 1px;
-    width: 90%;
-}
-
-.product{
-    margin-top: 50px;
-    margin-left: 150px;
-    width: 400px;
-    height: 550px;
-    border: solid;
-    background-size: cover;
-    border-radius: 20px;
-    text-decoration: none;
-    box-decoration-break: unset;
-    color: inherit;
-}
-
-.content{
-    width: 100%;
-    height: 25%;
-    border:solid 1px;
-    border-radius: 20px;
-    margin-top: 103%;
-    background: #FFFFFF;
-    border-top-left-radius: 80px;
-    border-top-right-radius: 80px;
-    cursor: default;
-}
-.content #content-name{
+#category{
     display: block;
-    box-sizing: border-box;
-    text-align: center;
-    margin-top: 10px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
+    margin-top:50px;
+    width: 800px;
+    height: 56px;
+    font-size: 48px;
     color: #000000;
 }
 
-.content #content-buy{
-    display: flex;
+#number{
+    display: block;
+    margin-top:10px;
+    width: 540px;
+    height: 56px;
+    font-size: 48px;
+    color: #000000;
 }
 
-.content #content-price{
+#price{
     display: block;
     box-sizing: border-box;
-    margin-top: 20px;
-    margin-left: 5%;
-    margin-bottom: 100px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 33px;
+    margin-top: 380px;
+    font-size: 48px;
     color: #000000;
-    width: 150px;
+    width: 200px;
 }
 
 
  #in-basket{
+    user-select: none;
+    cursor: pointer;
     display: block;
     box-sizing: border-box;
     border:solid 1px black;
     background: rgb(19, 192, 62);
-    height: 60px;
-    width: 190px;
+    height: 70px;
+    width: 250px;
     text-align: center;
     padding-top: 10px;
-    margin-left: 5%;
+    font-size: 48px;
     margin-top: 10px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 42px;
-     user-select: none;
     color: #FFFFFF;
-     cursor: pointer;
-
 }
+
 #in-basket:hover{
     background: rgb(47, 231, 93);
 }
 
 #in-basket:active{
     background: rgb(19, 192, 62);
-}
-
-#content-line{
-    border: solid #403b42 1px;
-    width: 80%;
-    margin-left: 10%;
 }

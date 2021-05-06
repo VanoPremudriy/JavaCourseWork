@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th = "http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Orchid World</title>
+        <link rel="stylesheet" href="styles/product.css">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <header>
+            <div id = "header-name">
+                <span>Orchid World</span>
+            </div>
+            <a href="/" id = "header-main">Главная</a>
+            <a href="/catalog?id=1" id = "header-catalog">Каталог</a>
+            <a href="#" id = "header-about">О нас</a>
+            <a id="header-basket" onmouseover="change()" onmouseout="notChange()">
+                <img src="images/basket.png" width="110px" height="100px" alt="#" id="basket">
+                <img src="images/arrow.png" width="50px" height="30px" alt="#" id="arrow">
+            </a>
+        </header>
+
+        <div class="content">
+            <div class="for-image">
+                <img th:src="@{'images/'} + ${product.get().image}" width="100%" height="auto">
+            </div>
+            <div class="for-info">
+                <span id="name" th:text="${product.get().name}"></span>
+                <span id="category" th:text="'Категория: ' + ${type.get().name}"></span>
+                <span id="number">Количество: 1шт.</span>
+                <span id = "price" th:text="${product.get().price} +' руб.'"></span>
+                <span id = "in-basket">В корзину</span>
+            </div>
+        </div>
+    </body>
+</html>

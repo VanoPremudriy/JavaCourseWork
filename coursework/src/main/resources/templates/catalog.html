@@ -4,14 +4,15 @@
         <meta charset="UTF-8">
         <title>Каталог</title>
         <link rel="stylesheet" th:href="@{styles/catalog.css}">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <header>
             <div id = "header-name">
                 <span>Orchid World</span>
             </div>
-            <a href="#" id = "header-main">Главная</a>
-            <a href="#" id = "header-catalog">Каталог</a>
+            <a href="/" id = "header-main">Главная</a>
+            <a href="/catalog?id=1" id = "header-catalog">Каталог</a>
             <a href="#" id = "header-about">О нас</a>
             <a id="header-basket" onmouseover="change()" onmouseout="notChange()">
                 <img src="images/basket.png" width="110px" height="100px" alt="#" id="basket">
@@ -34,9 +35,10 @@
             <p th:text="${type.get().name}"></p>
             <div id = "line"></div>
             <div class = "main-block-content">
-                <div class = "product" th:each="product: ${products}" th:style="'background-image:url(' + @{'/images/' + ${product.image}} + ');'">
-                  <!--  <img th:src="@{'/images/' + ${product.image}}">-->
-                    <div class = "content">
+                <a class = "product" th:each="product: ${products}"
+                     th:style="'background-image:url(' + @{'/images/' + ${product.image}} + ');'"
+                     th:href="'/product?id=' + ${product.id}">
+                    <div class = "content" onclick="return false">
                         <span id = "content-name" th:text="${product.name}"></span>
                         <div id = "content-line"></div>
                         <div id = "content-buy">
@@ -44,7 +46,7 @@
                             <span id = "in-basket">В корзину</span>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
 
