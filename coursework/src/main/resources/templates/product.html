@@ -22,14 +22,16 @@
 
         <div class="content">
             <div class="for-image">
-                <img th:src="@{'images/'} + ${product.get().image}" width="100%" height="auto">
+               <img th:src="@{'images/' + ${product.get().image}}" width="100%" height="auto">
             </div>
             <div class="for-info">
                 <span id="name" th:text="${product.get().name}"></span>
                 <span id="category" th:text="'Категория: ' + ${type.get().name}"></span>
                 <span id="number">Количество: 1шт.</span>
                 <span id = "price" th:text="${product.get().price} +' руб.'"></span>
-                <span id = "in-basket">В корзину</span>
+                <form method="post" th:action="@{/product(id=${product.get.getId()})}">
+                <input type="submit" value="В корзину" id = "in-basket">
+                </form>
             </div>
         </div>
         <script>
