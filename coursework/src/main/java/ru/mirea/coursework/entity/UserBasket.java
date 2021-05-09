@@ -17,9 +17,11 @@ public class UserBasket {
     @Column
     private int price;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    /*@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_type_id")
-    private ProductType productType;
+    private ProductType productType;*/
+    @Column
+    private Long productTypeId;
 
     public UserBasket() {
     }
@@ -56,11 +58,11 @@ public class UserBasket {
         this.price = price;
     }
 
-    public ProductType getProductType() {
-        return productType;
+    public Long getProductTypeId() {
+        return productTypeId;
     }
 
-    public void setProductType(ProductType productType) {
-        this.productType = productType;
+    public void setProductType(Long productTypeId) {
+        this.productTypeId = productTypeId;
     }
 }

@@ -31,32 +31,51 @@ public class ProductController {
     @Autowired
     UserBasketRepository userBasketRepository;
 
-    private Session session = null;
-    SessionFactory  sessionFactory  = null;
 
 
     @GetMapping("/product")
-    public String product(@RequestParam("id") Long id,  Model productModel, Model typeModel) {
+    public String product(@RequestParam("id") Long id,  @ModelAttribute("bskt") UserBasket bskt, Model productModel, Model typeModel, Model uBasketModel, Model bsktModel) {
+        bsktModel.addAttribute("bskt",bskt);
         Optional<Product> product = productrepository.findById(id);
         productModel.addAttribute("product", product);
         Optional<ProductType> type = productTypeRepository.findById(product.get().getProductType().getId());
         typeModel.addAttribute("type", type);
+        Iterable<UserBasket> uBasket = userBasketRepository.findAll();
+        uBasketModel.addAttribute("basket", uBasket);
         return "/product";
     }
 
-    
-    @PostMapping("/product")
-    public String inBasket(@RequestParam("id") Long id, Model productModel, Model typeModel ){
+
+    @PostMapping("/add")
+    public String inBasket(@RequestParam("id") Long id, @ModelAttribute("bskt") UserBasket bskt, Model productModel, Model typeModel, Model uBasketModel, Model bsktModel){
+        bsktModel.addAttribute("bskt",bskt);
         Optional<Product> product = productrepository.findById(id);
         productModel.addAttribute("product", product);
         Optional<ProductType> type = productTypeRepository.findById(product.get().getProductType().getId());
         typeModel.addAttribute("type", type);
+        Iterable<UserBasket> uBasket = userBasketRepository.findAll();
+        uBasketModel.addAttribute("basket", uBasket);
         UserBasket userBasket = new UserBasket();
         userBasket.setImage(product.get().getImage());
         userBasket.setName(product.get().getName());
         userBasket.setPrice(product.get().getPrice());
-        userBasket.setProductType(product.get().getProductType());
+        userBasket.setProductType(product.get().getProductType().getId());
         userBasketRepository.save(userBasket);
-        return "/about";
+        return "redirect:/product?id=" + id;
+    }
+
+    @PostMapping("/delete")
+    public String deleteFromBasket(Long id1, Long id2, Model productModel, Model typeModel, Model uBasketModel, Model bsktModel, Model mod1, Model mod2) {
+        mod1.addAttribute("id1", id1);
+        mod2.addAttribute("id2", id2);
+        Optional<Product> product = productrepository.findById(id2);
+        productModel.addAttribute("product", product);
+        Optional<ProductType> type = productTypeRepository.findById(product.get().getProductType().getId());
+        typeModel.addAttribute("type", type);
+        Iterable<UserBasket> uBasket = userBasketRepository.findAll();
+        uBasketModel.addAttribute("basket", uBasket);
+        userBasketRepository.deleteById(id1);
+        System.out.println(id1 + " "  +id2);
+        return "redirect:/product?id=" + id2;
     }
 }
