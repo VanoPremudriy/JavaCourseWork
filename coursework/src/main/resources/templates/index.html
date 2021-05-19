@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th = "http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <title>Orchid World</title>
@@ -14,10 +14,34 @@
             <a href="/" id = "header-main">Главная</a>
             <a href="/catalog?id=1" id = "header-catalog">Каталог</a>
             <a href="/about" id = "header-about">О нас</a>
-            <a id="header-basket" onmouseover="change()" onmouseout="notChange()">
-                <img src="images/basket.png" width="110px" height="100px" alt="#" id="basket">
-                <img src="images/arrow.png" width="50px" height="30px" alt="#" id="arrow">
-            </a>
+            <ul>
+                <li>
+                    <a id="header-basket" onmouseover="change()" onmouseout="notChange()">
+                        <img src="images/basket.png" width="110px" height="100px" alt="#" id="basket">
+                        <img src="images/arrow.png" width="50px" height="30px" alt="#" id="arrow">
+                    </a>
+                    <ul id="sub">
+                        <li id="sum">
+                            <span id="sum-price">Цена: </span>
+                        </li>
+                        <li class="prd" th:each="baskets: ${basket}">
+                            <div id="prd-nn">
+                                <span id="prd-name" th:text="${baskets.getName()}"></span>
+                                <span id="prd-number">1 шт.</span>
+                            </div>
+                            <form method="post" th:action="@{/deletefromindex}">
+                                <input type="hidden" name="id" th:value="${baskets.getId()}" th:name="id">
+                                <input id="del" type="submit" value="✖">
+                            </form>
+                        </li>
+                        <li id="buy">
+                            <form method="get" th:action="@{/purchase}">
+                                <input id="btn-buy" type="submit" value="Купить">
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </header>
 
         <div class="slideshow-container">

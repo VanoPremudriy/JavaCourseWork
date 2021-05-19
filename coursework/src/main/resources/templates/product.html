@@ -29,15 +29,14 @@
                                 <span id="prd-name" th:text="${baskets.getName()}"></span>
                                 <span id="prd-number">1 шт.</span>
                             </div>
-                            <form method="post" th:action="@{/delete}">
-
+                            <form method="post" th:action="@{/deletefromproduct}">
                                 <input type="hidden" name="id1" th:value="${baskets.getId()}" th:name="id1">
                                 <input type="hidden" name="id2" th:value="${product.get().getId()}" th:name="id2">
                                 <input id="del" type="submit" value="✖">
                             </form>
                         </li>
                         <li id="buy">
-                            <form >
+                            <form method="get" th:action="@{/purchase}">
                                 <input id="btn-buy" type="submit" value="Купить">
                             </form>
                         </li>
@@ -55,7 +54,7 @@
                 <span id="category" th:text="'Категория: ' + ${type.get().name}"></span>
                 <span id="number">Количество: 1шт.</span>
                 <span id = "price" th:text="${product.get().price} +' руб.'"></span>
-                <form method="post" th:action="@{/add(id=${product.get.getId()})}">
+                <form method="post" th:action="@{/addfromproduct(id=${product.get.getId()})}">
                 <input type="submit" value="В корзину" id = "in-basket">
                 </form>
             </div>

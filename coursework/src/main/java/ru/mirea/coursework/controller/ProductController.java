@@ -18,6 +18,7 @@ import ru.mirea.coursework.repository.ProductTypeRepository;
 import ru.mirea.coursework.repository.UserBasketRepository;
 
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 
 @Controller
@@ -46,8 +47,8 @@ public class ProductController {
     }
 
 
-    @PostMapping("/add")
-    public String inBasket(@RequestParam("id") Long id, @ModelAttribute("bskt") UserBasket bskt, Model productModel, Model typeModel, Model uBasketModel, Model bsktModel){
+    @PostMapping("/addfromproduct")
+    public String inBasketFromProduct(@RequestParam("id") Long id, @ModelAttribute("bskt") UserBasket bskt, Model productModel, Model typeModel, Model uBasketModel, Model bsktModel){
         bsktModel.addAttribute("bskt",bskt);
         Optional<Product> product = productrepository.findById(id);
         productModel.addAttribute("product", product);
@@ -64,8 +65,8 @@ public class ProductController {
         return "redirect:/product?id=" + id;
     }
 
-    @PostMapping("/delete")
-    public String deleteFromBasket(Long id1, Long id2, Model productModel, Model typeModel, Model uBasketModel, Model bsktModel, Model mod1, Model mod2) {
+    @PostMapping("/deletefromproduct")
+    public String deleteFromBasketFromProduct(Long id1, Long id2, Model productModel, Model typeModel, Model uBasketModel, Model mod1, Model mod2) {
         mod1.addAttribute("id1", id1);
         mod2.addAttribute("id2", id2);
         Optional<Product> product = productrepository.findById(id2);
@@ -75,6 +76,11 @@ public class ProductController {
         Iterable<UserBasket> uBasket = userBasketRepository.findAll();
         uBasketModel.addAttribute("basket", uBasket);
         userBasketRepository.deleteById(id1);
+        AtomicReference<Long> newId = new AtomicReference<>(1l);
+        uBasket = userBasketRepository.findAll();
+        userBasketRepository.deleteAll();
+        uBasket.forEach(userBasket -> userBasket.setId(newId.getAndSet(newId.get() + 1)));
+        userBasketRepository.saveAll(uBasket);
         System.out.println(id1 + " "  +id2);
         return "redirect:/product?id=" + id2;
     }

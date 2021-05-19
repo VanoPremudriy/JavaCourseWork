@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th = "http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Orchid World</title>
+        <link rel="stylesheet" href="styles/purchase.css">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <header>
+            <div id = "header-name">
+                <span>Orchid World</span>
+            </div>
+            <a href="/" id = "header-main">Главная</a>
+            <a href="/catalog?id=1" id = "header-catalog">Каталог</a>
+            <a href="about.html" id = "header-about">О нас</a>
+            <ul>
+                <li>
+                    <a id="header-basket" onmouseover="change()" onmouseout="notChange()">
+                        <img src="images/basket.png" width="110px" height="100px" alt="#" id="basket">
+                        <img src="images/arrow.png" width="50px" height="30px" alt="#" id="arrow">
+                    </a>
+                    <ul id="sub">
+                        <li id="sum">
+                            <span id="sum-price">Цена: </span>
+                        </li>
+                        <li class="prd" th:each="baskets: ${basket}">
+                            <div id="prd-nn">
+                                <span id="prd-name" th:text="${baskets.getName()}"></span>
+                                <span id="prd-number">1 шт.</span>
+                            </div>
+                            <form method="post" th:action="@{/deletefromindex}">
+                                <input type="hidden" name="id" th:value="${baskets.getId()}" th:name="id">
+                                <input id="del" type="submit" value="✖">
+                            </form>
+                        </li>
+                        <li id="buy">
+                            <form method="get" th:action="@{/purchase}">
+                                <input id="btn-buy" type="submit" value="Купить">
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+
+        <form  th:object="${new_user}" method="post" th:action="@{/adduser}">
+        <div class="content">
+            <div class="for-contact">
+                <div style="display: flex;">
+                    <span>Фамилия</span>
+                    <input type="text" placeholder="Иванов" required th:field="*{lastName}">
+                </div>
+                <div style="display: flex;">
+                    <span>Имя</span>
+                    <input type="text"  placeholder="Иван" style="margin-left: 122px;" required th:field="*{name}">
+                </div>
+                <div style="display: flex;">
+                    <span>Отчество</span>
+                    <input type="text"  placeholder="Иванович" style="margin-left: 18px;" required th:field="*{middleName}">
+                </div>
+                <div style="display: flex;">
+                    <span>Телефон</span>
+                    <input type="tel"  placeholder="+7 (xxx) xxx-xx-xx" style="margin-left: 33px;" required pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" minlength="18" maxlength="18" th:field="*{tel}">
+                    <span class="form-error error-name">Это поле должно содержать телефон в формате +7 (123) 456-78-90</span>
+                </div>
+                <div style="display: flex;">
+                    <span>Почта</span>
+                    <input type="email" placeholder="example@site.com" style="margin-left: 83px;" required th:field="*{email}">
+                    <span class="form-error error-name">Это поле должно содержать E-Mail в формате example@site.com</span>
+                </div>
+            </div>
+            <div class="for-contact">
+                <div id="card-back">
+                    <input type="text" id="card-cvv" placeholder="123" required minlength="3" maxlength="3">
+            </div>
+            <div id="card-front">
+                <input type="text" id="card-number" placeholder="1111222233334444"  required  minlength="16" maxlength="16">
+                <input type="text" id="card-name" placeholder="MASTER ACCOUNT DEBIT" required>
+            </div>
+            <span th:text="'Итоговая цена: ' + ${sum}"></span>
+            <input type="submit" value="Оплатить" id="end-buy">
+        </div>
+        </div>
+    </form>
+    </body>
+</html>

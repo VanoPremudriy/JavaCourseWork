@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Orchid World</title>
-        <link rel="stylesheet" href="styles/about.css">
+        <link rel="stylesheet" href="styles/thanks.css">
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     </head>
     <body>
@@ -29,7 +29,7 @@
                                 <span id="prd-name" th:text="${baskets.getName()}"></span>
                                 <span id="prd-number">1 шт.</span>
                             </div>
-                            <form method="post" th:action="@{/deletefromabout}">
+                            <form method="post" th:action="@{/deletefromindex}">
                                 <input type="hidden" name="id" th:value="${baskets.getId()}" th:name="id">
                                 <input id="del" type="submit" value="✖">
                             </form>
@@ -44,29 +44,42 @@
             </ul>
         </header>
 
-        <div class="content">
-            <div class="for-info">
-                <span id="why">Почему именно мы?</span>
-                <span id="one">&#10102 Качественные цветы</span>
-                <span id="two">&#10103 Доступные цены</span>
-                <span id="three">&#10104 Наилучший уход</span>
-                <span id="four">&#10105 Грамотные специалисты</span>
-            </div>
-            <div class="for-contact">
-               <span id="contact">Контакты</span>
-               <span id="address">Москва, <br>ул. Пушкина, д. Колотушкина</span>
-               <span id="mail">info@orchid-world.ru</span>
-               <span id="when">Ежедневно 9:00-23:00</span>
-               <span id="telephone">+7 (800) 555-35-35</span>
-               <a href="#" id="whatsapp"><img src="images/whatsapp.png" alt="" width="100px" height="100px"></a>
-               <a href="#" id="viber"><img src="images/viber.png" alt="" width="90px" height="90px"></a>
-               <a href="#" id="telegram"><img src="images/telegram.png" alt="" width="90px" height="90px"></a>
-               <span id="in-soc">Мы в соц. сетях</span>
-               <a href="#" id="instagram"><img src="images/instagram.png" alt="" width="90px" height="90px"></a>
-               <a href="#" id="vk"><img src="images/vk.png" alt="" width="90px" height="90px"></a>
-            </div>
-        </div>
+        <div id="content">
+        <span id="thanks">Спасибо за покупку!</span>
+        <span id="number1" th:text="'Номер вашего заказа ' + ${user.get().getId()}" >Номер вашего заказа</span>
+        <span id="in">Ожидаем вас в магазине!</span>
+        <a id="back" href="/index">Вернуться на главную</a>
+         </div>
         <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            // Thumbnail image controls
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+            }
+
             function change(){
                 let arrow = document.getElementById('arrow');
                 let basket = document.getElementById('basket');

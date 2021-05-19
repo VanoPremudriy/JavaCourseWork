@@ -1,0 +1,86 @@
+
+insert into product_type values (1, 'Ванда');
+insert into product_type values (2, 'Дендробиум');
+insert into product_type values (3, 'Камбрия');
+insert into product_type values (4, 'Каттлея');
+insert into product_type values (5, 'Пафиопедилум');
+insert into product_type values (6, 'фаленопсис');
+insert into product_type values (7, 'Цикнохес');
+insert into product_type values (8, 'Цимбидиум');
+
+
+insert into product_table values (1, 'vanda/vechnaya-vesna.jpg' ,'Цимбидиум', 6500, 1);
+insert into product_table values (2, 'vanda/vishnevaya-metel.jpg' ,'Вишневая метель', 6500, 1);
+insert into product_table values (3, 'vanda/koroleva-bala.jpg' ,'Королева бала', 7000, 1);
+insert into product_table values (4, 'vanda/lambada.jpg' ,'Ламбада', 5500, 1);
+insert into product_table values (5, 'vanda/morskoy-priboy.jpg' ,'Морской прибой', 6500, 1);
+insert into product_table values (6, 'vanda/navazhdenie.jpg' ,'Наваждение', 7000, 1);
+insert into product_table values (7, 'vanda/red-delayt.jpg' ,'Ред делайт', 6500, 1);
+insert into product_table values (8, 'vanda/sanderiana.jpg' ,'Сандериана', 6500, 1);
+
+
+insert into product_table values (9, 'dendrobium/belyy-parus.jpg' ,'Белый парус', 3500, 2);
+insert into product_table values (10, 'dendrobium/vardianum.jpg' ,'Вардианум', 4000, 2);
+insert into product_table values (11, 'dendrobium/golubaya-laguna.jpg' ,'Голубая лагуна', 4500, 2);
+insert into product_table values (12, 'dendrobium/zhara.jpg', 'Жара', 4000, 2);
+insert into product_table values (13, 'dendrobium/zheltaya-likhoradk.jpg' ,'Желтая лихорадка', 4000, 2);
+insert into product_table values (14, 'dendrobium/zolotoy-grammof.jpg' ,'Золотой граммофон', 4000, 2);
+insert into product_table values (15, 'dendrobium/limonadnyy-dzho.jpg' ,'Лимонадный Джо', 4000, 2);
+insert into product_table values (16, 'dendrobium/makroplektus.jpg' ,'Макроплектус', 3500, 2);
+
+
+insert into product_table values (17, 'kambriya/brassidium-spayder.jpg' ,'Брассидиум Спайдер', 4000, 3);
+insert into product_table values (18, 'kambriya/goluboy-angel.jpg' ,'Голубой ангел', 4500, 3);
+insert into product_table values (19, 'kambriya/makeya.jpg' ,'Макея', 3500, 3);
+insert into product_table values (20, 'kambriya/zvezda-vostoka.jpg', 'Звезда Востока', 5000, 3);
+insert into product_table values (21, 'kambriya/khitryy-lis.jpg' ,'Хитрый лис', 4000, 3);
+insert into product_table values (22, 'kambriya/leliya-karpofila.jpg' ,'Лелия Карпофила', 4000, 3);
+insert into product_table values (23, 'kambriya/aleksandr-dyum.jpg' ,'Александр Дюма', 4000, 3);
+insert into product_table values (24, 'kambriya/alisa.jpg' ,'Алиса', 4000, 3);
+
+
+insert into product_table values (25, 'kattleya/dzhuliya.jpg' ,'Джулия', 6000, 4);
+insert into product_table values (26, 'kattleya/zheltaya-reka.jpg' ,'Желтая река', 10000, 4);
+insert into product_table values (27, 'kattleya/belaya-medveditsa.jpg' ,'Белая медведица', 5000, 4);
+insert into product_table values (28, 'kattleya/varneri-dak.jpg', 'Варнери дак', 5500, 4);
+insert into product_table values (29, 'kattleya/varneri.jpg' ,'Варнери', 6000, 4);
+insert into product_table values (30, 'kattleya/avayskoe-utro.jpg' ,'Гавайское утро', 6500, 4);
+insert into product_table values (31, 'kattleya/golubaya-luna.jpg' ,'Голубая луна', 6000, 4);
+insert into product_table values (32, 'kattleya/belaya-ladya.jpg' ,'Белая ладья', 6500, 4);
+
+
+insert into product_table values (33, 'pafiopedilum/glaukofillum-alba.jpg' ,'Глаукофиллум альба', 4000, 5);
+insert into product_table values (34, 'pafiopedilum/gnomik-dushka.jpg' ,'Гномик душка', 4000 , 5);
+insert into product_table values (35, 'pafiopedilum/zelenyy-maudi.jpg' ,'Зеленый мауди', 4000 , 5);
+insert into product_table values (36, 'pafiopedilum/belatulum.jpg', 'белатулум', 10000, 5);
+insert into product_table values (37, 'pafiopedilum/kaliforniya.jpg' ,'Калифорния', 10000, 5);
+insert into product_table values (38, 'pafiopedilum/chernyy-maudi.jpg' ,'Черный мауди', 5000, 5);
+insert into product_table values (39, 'pafiopedilum/kaliforniya.jpg' ,'Американец', 4500, 5);
+insert into product_table values (40, 'pafiopedilum/vardianum.jpg' ,'Вардианум', 4500, 5);
+
+
+insert into product_table values (41, 'falenopsis/alisa.jpg' ,'Алиса', 4500, 6);
+insert into product_table values (42, 'falenopsis/bolshaya-igrushka.jpg' ,'Большая игрушка', 5000, 6);
+insert into product_table values (43, 'falenopsis/dzhek-vorobey.png' ,'Джек Воробей', 3500, 6);
+insert into product_table values (44, 'falenopsis/domino.png', 'Домино', 5000, 6);
+insert into product_table values (45, 'falenopsis/konfetka.jpg' ,'Конфетка', 3500, 6);
+insert into product_table values (46, 'falenopsis/lebedushka.jpg' ,'Лебедушка', 4500, 6);
+insert into product_table values (47, 'falenopsis/maugli.jpg' ,'Маугли', 4500, 6);
+insert into product_table values (48, 'falenopsis/mednyy-vsadnik.png' ,'Медный всадник', 3500, 6);
+
+
+insert into product_table values (49, 'Cycnodes/after-midnight.jpg' ,'After Midnight', 15000, 7);
+insert into product_table values (50, 'Cycnodes/bakers-cherry-madness.jpg' ,'Baker''s Cherry Madness', 15000  , 7);
+insert into product_table values (51, 'Cycnodes/black-pearl.jpg' ,'Black Pearl', 15000, 7);
+insert into product_table values (52, 'Cycnodes/midnight-lace.jpg', 'Midnight Lace', 15000, 7);
+insert into product_table values (53, 'Cycnodes/roberta-fox.jpg' ,'Roberta Fox', 15000, 7);
+
+
+insert into product_table values (54, 'czimbidium/belaya-gvardiya.jpg' ,'Белая гвардия', 5000, 8);
+insert into product_table values (55, 'czimbidium/vesna.jpg' ,'Весна', 5500, 8);
+insert into product_table values (56, 'czimbidium/zolotoe-runo.jpg' ,'Золотое руно', 5500, 8);
+insert into product_table values (57, 'czimbidium/krasnaya-gvardiya.jpg' ,'Красная гвардия', 7000, 8);
+insert into product_table values (58, 'czimbidium/nedotroga.jpg' ,'Недотрога', 5000, 8);
+insert into product_table values (59, 'czimbidium/burgundskoe-vino.jpg' ,'Бургундское вино', 6500, 8);
+insert into product_table values (60, 'czimbidium/', '', 10000, 8);
+insert into product_table values (61, 'czimbidium/' ,'', 10000, 8);
