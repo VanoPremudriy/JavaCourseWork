@@ -82,5 +82,6 @@ insert into product_table values (56, 'czimbidium/zolotoe-runo.jpg' ,'Золот
 insert into product_table values (57, 'czimbidium/krasnaya-gvardiya.jpg' ,'Красная гвардия', 7000, 8);
 insert into product_table values (58, 'czimbidium/nedotroga.jpg' ,'Недотрога', 5000, 8);
 insert into product_table values (59, 'czimbidium/burgundskoe-vino.jpg' ,'Бургундское вино', 6500, 8);
-insert into product_table values (60, 'czimbidium/', '', 10000, 8);
-insert into product_table values (61, 'czimbidium/' ,'', 10000, 8);
+insert into product_table values (60, 'czimbidium/krasnyy-shar.jpg', 'Красный шар', 7000, 8);
+insert into product_table values (61, 'czimbidium/nevinnaya-ulybka.jpg' ,'Невинная улыбка', 6000, 8);
+
