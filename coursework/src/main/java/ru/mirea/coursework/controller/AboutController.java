@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ru.mirea.coursework.entity.UserBasket;
 import ru.mirea.coursework.repository.UserBasketRepository;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Controller
@@ -17,9 +18,13 @@ public class AboutController {
     UserBasketRepository userBasketRepository;
 
     @GetMapping("/about")
-    public String about(Model uBasketModel){
+    public String about(Model uBasketModel, Model basketSum){
         Iterable<UserBasket> uBasket = userBasketRepository.findAll();
         uBasketModel.addAttribute("basket", uBasket);
+        AtomicInteger sum = new AtomicInteger();
+        uBasket.forEach(userBasket -> sum.set(sum.get() + userBasket.getPrice()));
+        int sum1 = sum.get();
+        basketSum.addAttribute("sum", sum1);
         return "about";
     }
 

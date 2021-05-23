@@ -18,6 +18,7 @@ import ru.mirea.coursework.repository.ProductTypeRepository;
 import ru.mirea.coursework.repository.UserBasketRepository;
 
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 
@@ -35,7 +36,7 @@ public class ProductController {
 
 
     @GetMapping("/product")
-    public String product(@RequestParam("id") Long id,  @ModelAttribute("bskt") UserBasket bskt, Model productModel, Model typeModel, Model uBasketModel, Model bsktModel) {
+    public String product(@RequestParam("id") Long id,  @ModelAttribute("bskt") UserBasket bskt, Model productModel, Model typeModel, Model uBasketModel, Model bsktModel, Model basketSum) {
         bsktModel.addAttribute("bskt",bskt);
         Optional<Product> product = productrepository.findById(id);
         productModel.addAttribute("product", product);
@@ -43,6 +44,10 @@ public class ProductController {
         typeModel.addAttribute("type", type);
         Iterable<UserBasket> uBasket = userBasketRepository.findAll();
         uBasketModel.addAttribute("basket", uBasket);
+        AtomicInteger sum = new AtomicInteger();
+        uBasket.forEach(userBasket -> sum.set(sum.get() + userBasket.getPrice()));
+        int sum1 = sum.get();
+        basketSum.addAttribute("sum", sum1);
         return "/product";
     }
 

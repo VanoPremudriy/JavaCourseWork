@@ -22,7 +22,7 @@
                     </a>
                     <ul id="sub">
                         <li id="sum">
-                            <span id="sum-price">Цена: </span>
+                            <span id="sum-price" th:text="'Цена: ' + ${sum} + ' руб.'"></span>
                         </li>
                         <li class="prd" th:each="baskets: ${basket}">
                             <div id="prd-nn">

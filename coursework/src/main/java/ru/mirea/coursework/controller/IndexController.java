@@ -11,6 +11,7 @@ import ru.mirea.coursework.entity.UserBasket;
 import ru.mirea.coursework.repository.UserBasketRepository;
 
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Controller
@@ -20,9 +21,13 @@ public class IndexController {
     UserBasketRepository userBasketRepository;
 
     @GetMapping(value = {"/", "/index"})
-    public String index(Model uBasketModel){
+    public String index(Model uBasketModel, Model basketSum){
         Iterable<UserBasket> uBasket = userBasketRepository.findAll();
         uBasketModel.addAttribute("basket", uBasket);
+        AtomicInteger sum = new AtomicInteger();
+        uBasket.forEach(userBasket -> sum.set(sum.get() + userBasket.getPrice()));
+        int sum1 = sum.get();
+        basketSum.addAttribute("sum", sum1);
         return "index";
     }
 

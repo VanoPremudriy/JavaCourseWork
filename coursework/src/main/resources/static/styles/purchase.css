@@ -6,6 +6,8 @@ header{
     border: 1px solid #000000;
     box-sizing: border-box;
     display:flex;
+    position: relative;
+    z-index: 2;
 }
 
 #header-name{
@@ -246,6 +248,7 @@ ul li:hover #sub{
 
 .content{
     display: flex;
+    z-index: 0;
 }
 
 .for-contact{
