@@ -13,7 +13,7 @@ header{
 #header-name{
     width: 974px;
     height: 100%;
-    background: #C149FA;
+    background: #8A55FB;
     border: 1px solid #000000;
     box-sizing: border-box;
     /* align-content: center; */
@@ -50,14 +50,14 @@ header{
 }
 
 #header-main:hover{
-    background: #C149FA;
+    background: #8A55FB;
     color: #FFFFFF;
 }
 
 #header-catalog{
     width: 220px;
     height: 100%;
-    background: #C149FA;
+    background: #8A55FB;
     border: 1px solid #000000;
     box-sizing: border-box;
     text-align: center;
@@ -94,7 +94,7 @@ header{
 }
 
 #header-about:hover{
-    background: #C149FA;
+    background: #8A55FB;
     color: #FFFFFF;
 }
 
@@ -108,7 +108,7 @@ ul{
     list-style: none;
     width: 245px;
     height: 162px;
-    background: #C149FA;
+    background: #8A55FB;
     border: 1px solid #000000;
     box-sizing: border-box;
     margin-top: -16px;
@@ -293,7 +293,7 @@ ul li:hover #sub{
   
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover, .next:hover {
-    background-color:#C149FA;
+    background-color:#8A55FB;
     color: white;
   }
   
@@ -417,7 +417,7 @@ ul li:hover #sub{
 }
 
 .second .with-text{
-    background: #C149FA;
+    background: #8A55FB;
 }
 
 .second .with-text p{
